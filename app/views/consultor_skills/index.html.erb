@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Consultor skills</h1>
+
+<div id="consultor_skills">
+  <% @consultor_skills.each do |consultor_skill| %>
+    <%= render consultor_skill %>
+    <p>
+      <%= link_to "Show this consultor skill", consultor_skill %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New consultor skill", new_consultor_skill_path %>

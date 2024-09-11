@@ -1,0 +1,27 @@
+<%= form_with(model: consultor) do |form| %>
+  <% if consultor.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(consultor.errors.count, "error") %> prohibited this consultor from being saved:</h2>
+
+      <ul>
+        <% consultor.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :id_pessoa, style: "display: block" %>
+    <%= form.number_field :id_pessoa %>
+  </div>
+
+  <div>
+    <%= form.label :id_profissao, style: "display: block" %>
+    <%= form.number_field :id_profissao %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
