@@ -3,6 +3,7 @@
     <div class="sidebar-header">
       <div class="d-flex justify-content-between">
         <div class="logo">
+          <!-- Logo can go here -->
         </div>
         <div class="toggler">
           <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -12,50 +13,48 @@
     <div class="sidebar-menu">
       <ul class="menu">
         <li class="sidebar-title">Menu</li>
-        <li class="sidebar-item active ">
-          <%= link_to skills_path, class:'sidebar-link' do %>
-            <i class="bi bi-house-door"></i>
-            <span>Congregações</span>    
-          <% end %>
-        </li>
-        <li class="sidebar-item  has-sub">
+        
+        <!-- Tabelas Referenciais -->
+        <li class="sidebar-item has-sub">
           <a href="#" class='sidebar-link'>
             <i class="bi bi-file-earmark-spreadsheet"></i>
-            <span>Literatura</span>
+            <span>Tabelas Referenciais</span>
           </a>
-          <ul class="submenu ">
-            <li class="submenu-item ">
-              <%= link_to profissaos_path, class: 'sidebar-link' do%>
-                Valores
-              <%end%>
+          <ul class="submenu">
+            <li class="submenu-item">
+              <%= link_to pessoas_path, class: 'sidebar-link' do %>
+                Pessoas
+              <% end %>
             </li>
-            <li class="submenu-item ">
-              <%= link_to consultors_path, class: 'sidebar-link' do%>
-                Relatório
-              <%end%>
+            <li class="submenu-item">
+              <%= link_to clientes_path, class: 'sidebar-link' do %>
+                Clientes
+              <% end %>
+            </li>
+            <li class="submenu-item">
+              <%= link_to consultors_path, class: 'sidebar-link' do %>
+                Consultores
+              <% end %>
+            </li>
+            <li class="submenu-item">
+              <%= link_to profissaos_path, class: 'sidebar-link' do %>
+                Profissões
+              <% end %>
+            </li>
+            <li class="submenu-item">
+              <%= link_to tipo_usuarios_path, class: 'sidebar-link' do %>
+                Tipos de Usuários
+              <% end %>
+            </li>
+            <li class="submenu-item">
+              <%= link_to skills_path, class: 'sidebar-link' do %>
+                Skills
+              <% end %>
             </li>
           </ul>
-        </li>
-        <li class="sidebar-item  ">
-          <%= link_to clientes_path, class:'sidebar-link' do %>
-            <i class="fa-solid fa-money-bill"></i>           <span>Entradas</span>
-          <% end %>
         </li>
       </ul>
     </div>
     <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
