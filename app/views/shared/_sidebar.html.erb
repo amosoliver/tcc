@@ -1,60 +1,102 @@
-<div id="sidebar" class="active">
-  <div class="sidebar-wrapper active">
-    <div class="sidebar-header">
-      <div class="d-flex justify-content-between">
-        <div class="logo">
-          <!-- Logo can go here -->
+<div id="app">
+    <div id="sidebar" class="active">
+        <div class="sidebar-wrapper active">
+            <div class="sidebar-header">
+                <div class="d-flex justify-content-between">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="assets/images/logo/logo.png" alt="Logo" srcset="">
+                        </a>
+                    </div>
+                    <div class="toggler">
+                        <a href="#" class="sidebar-hide d-xl-none d-block">
+                            <i class="bi bi-x bi-middle"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <ul class="menu">
+                    <li class="sidebar-title">Menu</li>
+
+                    <li class="sidebar-item active">
+                        <a href="index.html" class="sidebar-link">
+                            <i class="bi bi-grid-fill"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item has-sub">
+                        <a href="#" class="sidebar-link">
+                            <i class="bi bi-collection-fill"></i>
+                            <span>Extra Components</span>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <%= link_to 'Avatar', 'extra-component-avatar.html' %>
+                            </li>
+                            <li class="submenu-item">
+                                <%= link_to 'Sweet Alert', 'extra-component-sweetalert.html' %>
+                            </li>
+                            <li class="submenu-item">
+                                <%= link_to 'Toastify', 'extra-component-toastify.html' %>
+                            </li>
+                            <li class="submenu-item">
+                                <%= link_to 'Rating', 'extra-component-rating.html' %>
+                            </li>
+                            <li class="submenu-item">
+                                <%= link_to 'Divider', 'extra-component-divider.html' %>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item has-sub">
+                        <a href="#" class="sidebar-link">
+                            <i class="bi bi-cog-fill"></i>
+                            <span>Admin</span>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <%= link_to 'Agenda', agendas_path %>
+                            </li>
+                            <li class="submenu-item">
+                                <%= link_to 'Cliente', clientes_path %>
+                            </li>
+                            <li class="submenu-item">
+                                <%= link_to 'Consultor Skill', consultor_skills_path %>
+                            </li>
+                            <li class="submenu-item">
+                                <%= link_to 'Pessoa', pessoas_path %>
+                            </li>
+                            <li class="submenu-item">
+                                <%= link_to 'Consultor', consultors_path %>
+                            </li>
+                            <li class="submenu-item">
+                                <%= link_to 'Profissão', profissaos_path %>
+                            </li>
+                            <li class="submenu-item">
+                                <%= link_to 'Skill', skills_path %>
+                            </li>
+                            <li class="submenu-item">
+                                <%= link_to 'Tipo Usuário', tipo_usuarios_path %>
+                            </li>
+                            <li class="submenu-item">
+                                <%= link_to 'Usuário', usuarios_path %>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a href="table.html" class="sidebar-link">
+                            <i class="bi bi-grid-1x2-fill"></i>
+                            <span>Table</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button class="sidebar-toggler btn x">
+                <i data-feather="x"></i>
+            </button>
         </div>
-        <div class="toggler">
-          <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
-        </div>
-      </div>
     </div>
-    <div class="sidebar-menu">
-      <ul class="menu">
-        <li class="sidebar-title">Menu</li>
-        
-        <!-- Tabelas Referenciais -->
-        <li class="sidebar-item has-sub">
-          <a href="#" class='sidebar-link'>
-            <i class="bi bi-file-earmark-spreadsheet"></i>
-            <span>Tabelas Referenciais</span>
-          </a>
-          <ul class="submenu">
-            <li class="submenu-item">
-              <%= link_to pessoas_path, class: 'sidebar-link' do %>
-                Pessoas
-              <% end %>
-            </li>
-            <li class="submenu-item">
-              <%= link_to clientes_path, class: 'sidebar-link' do %>
-                Clientes
-              <% end %>
-            </li>
-            <li class="submenu-item">
-              <%= link_to consultors_path, class: 'sidebar-link' do %>
-                Consultores
-              <% end %>
-            </li>
-            <li class="submenu-item">
-              <%= link_to profissaos_path, class: 'sidebar-link' do %>
-                Profissões
-              <% end %>
-            </li>
-            <li class="submenu-item">
-              <%= link_to tipo_usuarios_path, class: 'sidebar-link' do %>
-                Tipos de Usuários
-              <% end %>
-            </li>
-            <li class="submenu-item">
-              <%= link_to skills_path, class: 'sidebar-link' do %>
-                Skills
-              <% end %>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
-  </div>
 </div>

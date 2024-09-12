@@ -7,7 +7,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -21,10 +21,8 @@
   </head>
   <body>
     <%= render 'shared/sidebar' %>
-      <div id="main">  
-
     <%= yield %>
-    </div>
+
     <!-- JS Files -->
     <script src="/mazer-1.0.0/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="/mazer-1.0.0/dist/assets/js/bootstrap.bundle.min.js"></script>
