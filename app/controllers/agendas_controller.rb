@@ -13,6 +13,8 @@ class AgendasController < ApplicationController
   # GET /agendas/new
   def new
     @agenda = Agenda.new
+    @consultores = Consultor.all
+    @clientes = Cliente.all
   end
 
   # GET /agendas/1/edit

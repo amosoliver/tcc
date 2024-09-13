@@ -1,10 +1,10 @@
-<%= form_with(model: agenda) do |form| %>
-  <% if agenda.errors.any? %>
+<%= simple_form_for @agenda do |form| %>
+  <% if @agenda.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(agenda.errors.count, "error") %> prohibited this agenda from being saved:</h2>
+      <h2><%= pluralize(@agenda.errors.count, "error") %> prohibited this agenda from being saved:</h2>
 
       <ul>
-        <% agenda.errors.each do |error| %>
+        <% @agenda.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -12,18 +12,15 @@
   <% end %>
 
   <div>
-    <%= form.label :data_hora, style: "display: block" %>
-    <%= form.datetime_field :data_hora %>
+    <%= form.input :data_hora, as: :datetime %>
   </div>
 
   <div>
-    <%= form.label :id_consultor, style: "display: block" %>
-    <%= form.number_field :id_consultor %>
+    <%= form.input :id_consultor, collection: @consultores, as: :select, label_method: :name, value_method: :id, prompt: "Select a Consultor" %>
   </div>
 
   <div>
-    <%= form.label :id_cliente, style: "display: block" %>
-    <%= form.number_field :id_cliente %>
+    <%= form.input :id_cliente, collection: @clientes, as: :select, label_method: :name, value_method: :id, prompt: "Select a Cliente" %>
   </div>
 
   <div>

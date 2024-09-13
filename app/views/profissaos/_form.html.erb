@@ -1,19 +1,17 @@
-<%= form_with(model: profissao) do |form| %>
-  <% if profissao.errors.any? %>
+<%= simple_form_for @profissao do |form| %>
+  <% if @profissao.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(profissao.errors.count, "error") %> prohibited this profissao from being saved:</h2>
-
+      <h2><%= pluralize(@profissao.errors.count, "error") %> prohibited this profissao from being saved:</h2>
       <ul>
-        <% profissao.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% @profissao.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
   <div>
-    <%= form.label :nome, style: "display: block" %>
-    <%= form.text_field :nome %>
+    <%= form.input :nome, label: 'Nome', input_html: { style: 'display: block' } %>
   </div>
 
   <div>

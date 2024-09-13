@@ -1,47 +1,41 @@
-<%= form_with(model: pessoa) do |form| %>
-  <% if pessoa.errors.any? %>
+<%= simple_form_for @pessoa do |form| %>
+  <% if @pessoa.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(pessoa.errors.count, "error") %> prohibited this pessoa from being saved:</h2>
+      <h2><%= pluralize(@pessoa.errors.count, "error") %> prohibited this pessoa from being saved:</h2>
 
       <ul>
-        <% pessoa.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% @pessoa.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
   <div>
-    <%= form.label :nome, style: "display: block" %>
-    <%= form.text_field :nome %>
+    <%= form.input :nome %>
   </div>
 
   <div>
-    <%= form.label :cpf, style: "display: block" %>
-    <%= form.text_field :cpf %>
+    <%= form.input :cpf %>
   </div>
 
   <div>
-    <%= form.label :data_nascimento, style: "display: block" %>
-    <%= form.date_field :data_nascimento %>
+    <%= form.input :data_nascimento, as: :date %>
   </div>
 
   <div>
-    <%= form.label :telefone, style: "display: block" %>
-    <%= form.text_field :telefone %>
+    <%= form.input :telefone %>
   </div>
 
   <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+    <%= form.input :email %>
   </div>
 
   <div>
-    <%= form.label :endereco, style: "display: block" %>
-    <%= form.text_field :endereco %>
+    <%= form.input :endereco %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.button :submit %>
   </div>
 <% end %>

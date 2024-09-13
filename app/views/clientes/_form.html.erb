@@ -1,10 +1,9 @@
-<%= form_with(model: cliente) do |form| %>
-  <% if cliente.errors.any? %>
+<%= simple_form_for @cliente do |form| %>
+  <% if @cliente.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
-
+      <h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
       <ul>
-        <% cliente.errors.each do |error| %>
+        <% @cliente.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -12,13 +11,19 @@
   <% end %>
 
   <div>
-    <%= form.label :id_pessoa, style: "display: block" %>
-    <%= form.number_field :id_pessoa %>
+    <%= form.input :id_pessoa, 
+                   collection: @pessoas, 
+                   label_method: :nome, 
+                   value_method: :id, 
+                   prompt: "Selecione uma Pessoa" %>
   </div>
 
   <div>
-    <%= form.label :id_tipo_usuario, style: "display: block" %>
-    <%= form.number_field :id_tipo_usuario %>
+    <%= form.input :id_tipo_usuario, 
+                   collection: @tipos_usuarios, 
+                   label_method: :descricao, 
+                   value_method: :id, 
+                   prompt: "Selecione um Tipo de Usuário" %>
   </div>
 
   <div>
