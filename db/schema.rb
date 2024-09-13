@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_10_234152) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_13_152409) do
   create_table "agendas", force: :cascade do |t|
     t.datetime "data_hora"
     t.integer "id_consultor"
     t.integer "id_cliente"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "data"
+    t.string "hora"
   end
 
   create_table "clientes", force: :cascade do |t|

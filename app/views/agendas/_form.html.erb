@@ -1,29 +1,50 @@
-<%= simple_form_for @agenda do |form| %>
-  <% if @agenda.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(@agenda.errors.count, "error") %> prohibited this agenda from being saved:</h2>
-
-      <ul>
-        <% @agenda.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<section id="basic-vertical-layouts">
+  <div class="row match-height">
+    <div class="col-md-6 col-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Vertical Form</h4>
+        </div>
+        <div class="card-content">
+          <div class="card-body">
+            <div class="form-body">
+              <%= simple_form_for @agenda do |form| %>
+                <% if @agenda.errors.any? %>
+                  <div style="color: red">
+                    <h2><%= pluralize(@agenda.errors.count, "error") %> prohibited this agenda from being saved:</h2>
+                    <ul>
+                      <% @agenda.errors.each do |error| %>
+                        <li><%= error.full_message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <%= form.input :data_hora, as: :datetime %></div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <%= form.input :id_consultor, collection: @consultores, as: :select, label_method: :name, value_method: :id, prompt: "Select a Consultor" %>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <%= form.input :id_cliente, collection: @clientes, as: :select, label_method: :name, value_method: :id, prompt: "Select a Cliente" %>
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex justify-content-end">
+                    <%= form.submit %>
+                    <button type="reset"
+                                                class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.input :data_hora, as: :datetime %>
-  </div>
-
-  <div>
-    <%= form.input :id_consultor, collection: @consultores, as: :select, label_method: :name, value_method: :id, prompt: "Select a Consultor" %>
-  </div>
-
-  <div>
-    <%= form.input :id_cliente, collection: @clientes, as: :select, label_method: :name, value_method: :id, prompt: "Select a Cliente" %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+    </div>
+    </section>
